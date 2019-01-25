@@ -90,8 +90,38 @@ public class MyLinkedList {
 
 	 /*  Function to delete an element at position  */
 	public void deleteAtPos(int pos) {
-		// TODO Auto-generated method stub
-		
+		if(pos==1){
+			start = start.getLink();
+			size--;
+			return;
+		}
+		if(pos==size){
+			MyNode s = start;
+			MyNode t = start;
+			while(s!=end){
+				t=s;
+				s=s.getLink();
+				
+			}
+			end = t;
+			end.setLink(null);
+			size--;
+			return;
+		}
+		MyNode ptr = start;
+		pos = pos-1;
+		for(int i=1;i<size-1;i++){
+			if (i == pos) 
+            {
+                MyNode tmp = ptr.getLink();
+                tmp = tmp.getLink();
+                ptr.setLink(tmp);
+                break;
+            }
+            ptr = ptr.getLink();
+			
+		}
+		size--;
 	}
 
 }

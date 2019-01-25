@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Palendrome {
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		int num, revNum = 0, temp, mod;
 		Scanner sc = new Scanner(System.in);
